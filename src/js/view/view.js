@@ -869,6 +869,7 @@ function View(_api, _model) {
             _model.set('floating', true);
 
             if (!_isMobile) {
+                addClass(_wrapperElement, 'jw-float-bottom');
                 _resizeOnFloat = true;
 
                 // Resize within MAX_FLOATING_WIDTH×MAX_FLOATING_HEIGHT bounds, never enlarge.
@@ -879,6 +880,8 @@ function View(_api, _model) {
                 _this.resize(floatingWidth, floatingHeight, true);
 
                 _resizeOnFloat = false;
+            } else {
+                addClass(_wrapperElement, 'jw-float-top');
             }
         } else if (isVisible) {
             _stopFloating();
